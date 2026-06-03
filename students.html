@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For Students — Masoud Dehghani-Soufi, Ph.D.</title>
+<meta name="description" content="Course materials, lecture notes, datasets and announcements for students of Dr. Masoud Dehghani-Soufi." />
+
+<!-- ============================================================
+     STUDENTS PAGE — how to edit
+     - ANNOUNCEMENTS: copy one <div class="announce"> block (newest on top).
+     - COURSES: copy one <article class="course-block"> to add a course.
+     - FILES: inside a course, copy one <div class="file-row"> and point the
+       link to materials/your-file.pdf  (put the file in the materials/ folder).
+     - Styling is shared with the home page in assets/style.css
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+.
+     - Replace assets/CV_Masoud_Dehghani-Soufi.pdf with a newer CV
+       (keep the same filename) to update the download button.
+     - Drop a real photo at assets/profile.jpg and uncomment the
+       <img> line in the HERO section.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    /* ---- Colour palette: deep forest green + teal (sustainability) ---- */
+    --forest:        #133626;
+    --forest-deep:   #0C2419;
+    --forest-soft:   #1E4A37;
+    --accent:         #17A398;
+    --accent-deep:    #0E7C72;
+    --bg:         #EDF4F0;
+    --paper:         #FFFFFF;
+    --ink:           #16201B;
+    --muted:         #5C6A61;
+    --line:          #D6E3DC;
+    --shadow:        0 24px 60px -28px rgba(12,36,25,.45);
+
+    --display: "Fraunces", Georgia, serif;
+    --body:    "Spline Sans", -apple-system, sans-serif;
+    --maxw: 1120px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; scroll-padding-top:84px; }
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+  section{ position:relative; }
+
+  /* grain / paper texture overlay */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:9999; pointer-events:none;
+    opacity:.035; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------------- NAV ---------------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    backdrop-filter:saturate(140%) blur(10px);
+    background:rgba(237,244,240,.82);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s, box-shadow .3s, background .3s;
+  }
+  header.nav.scrolled{ border-color:var(--line); box-shadow:0 6px 24px -18px rgba(12,36,25,.5); }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:72px; }
+  .brand{ font-family:var(--display); font-weight:600; font-size:1.18rem; letter-spacing:-.01em; display:flex; align-items:center; gap:.55rem; }
+  .brand .dot{ width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(23,163,152,.25); }
+  nav ul{ list-style:none; display:flex; gap:1.9rem; align-items:center; }
+  nav a{ font-size:.86rem; font-weight:500; color:var(--muted); position:relative; padding:.2rem 0; transition:color .2s; }
+  nav a::after{ content:""; position:absolute; left:0; bottom:-3px; height:2px; width:0; background:var(--accent); transition:width .25s; }
+  nav a:hover, nav a.active{ color:var(--forest); }
+  nav a:hover::after, nav a.active::after{ width:100%; }
+  .nav-cta{ background:var(--forest); color:#fff !important; padding:.6rem 1.05rem; border-radius:100px; font-size:.82rem; font-weight:600; transition:transform .2s, background .2s; }
+  .nav-cta:hover{ background:var(--forest-soft); transform:translateY(-1px); }
+  .nav-cta::after{ display:none; }
+  .burger{ display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:0; padding:6px; }
+  .burger span{ width:24px; height:2px; background:var(--forest); transition:.3s; }
+
+  /* ---------------- HERO ---------------- */
+  .hero{ padding:140px 0 70px; background:
+      radial-gradient(1100px 520px at 85% -10%, rgba(23,163,152,.14), transparent 60%),
+      radial-gradient(900px 500px at -5% 10%, rgba(19,54,38,.07), transparent 55%);
+    overflow:hidden;
+  }
+  .hero-grid{ display:grid; grid-template-columns:1.55fr .85fr; gap:56px; align-items:center; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5rem; font-size:.74rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-deep); margin-bottom:1.4rem; }
+  .eyebrow::before{ content:""; width:30px; height:1px; background:var(--accent-deep); }
+  h1{ font-family:var(--display); font-weight:600; font-size:clamp(2.5rem,6vw,4.3rem); line-height:1.02; letter-spacing:-.02em; color:var(--forest); }
+  h1 em{ font-style:italic; color:var(--accent-deep); }
+  .hero-sub{ margin-top:1.3rem; font-size:clamp(1.02rem,1.6vw,1.22rem); color:var(--muted); max-width:46ch; }
+  .hero-role{ margin-top:1.6rem; font-size:.95rem; color:var(--forest-soft); font-weight:500; display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; }
+  .pin{ display:inline-flex; align-items:center; gap:.4rem; background:#fff; border:1px solid var(--line); padding:.35rem .8rem; border-radius:100px; font-size:.82rem; }
+  .hero-actions{ margin-top:2.2rem; display:flex; gap:.8rem; flex-wrap:wrap; }
+  .btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.3rem; border-radius:100px; font-weight:600; font-size:.9rem; transition:transform .2s, box-shadow .2s, background .2s; cursor:pointer; border:0; }
+  .btn-primary{ background:var(--forest); color:#fff; box-shadow:0 14px 30px -14px rgba(19,54,38,.7); }
+  .btn-primary:hover{ transform:translateY(-2px); background:var(--forest-soft); }
+  .btn-ghost{ background:#fff; color:var(--forest); border:1px solid var(--line); }
+  .btn-ghost:hover{ transform:translateY(-2px); border-color:var(--accent); }
+
+  .portrait{ position:relative; }
+  .portrait-frame{
+    aspect-ratio:4/5; border-radius:22px; overflow:hidden; position:relative;
+    background:linear-gradient(150deg,var(--forest),var(--forest-deep));
+    box-shadow:var(--shadow);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .portrait-frame img{ width:100%; height:100%; object-fit:cover; }
+  .portrait-initials{ font-family:var(--display); font-size:5rem; color:rgba(255,255,255,.25); font-weight:600; }
+  .portrait-frame::after{ content:""; position:absolute; inset:0; background:radial-gradient(circle at 70% 20%, rgba(23,163,152,.28), transparent 55%); }
+  .portrait-badge{
+    position:absolute; bottom:-18px; left:-18px; background:var(--accent); color:var(--forest-deep);
+    font-family:var(--display); font-weight:600; padding:.9rem 1.1rem; border-radius:16px; line-height:1; box-shadow:var(--shadow);
+  }
+  .portrait-badge b{ font-size:1.5rem; display:block; }
+  .portrait-badge span{ font-size:.68rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em; font-family:var(--body); }
+
+  /* ---------------- STATS STRIP ---------------- */
+  .stats{ background:var(--forest); color:#fff; }
+  .stats .wrap{ display:grid; grid-template-columns:repeat(5,1fr); gap:18px; padding:48px 24px; }
+  .stat b{ font-family:var(--display); font-size:clamp(1.8rem,3vw,2.6rem); font-weight:600; color:var(--accent); display:block; line-height:1; }
+  .stat span{ font-size:.78rem; letter-spacing:.05em; color:rgba(255,255,255,.7); margin-top:.5rem; display:block; text-transform:uppercase; }
+
+  /* ---------------- GENERIC SECTION ---------------- */
+  .block{ padding:96px 0; }
+  .sec-head{ margin-bottom:52px; max-width:62ch; }
+  .sec-tag{ font-size:.74rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-deep); display:flex; align-items:center; gap:.6rem; margin-bottom:1rem; }
+  .sec-tag::before{ content:""; width:26px; height:1px; background:var(--accent-deep); }
+  h2{ font-family:var(--display); font-weight:600; font-size:clamp(1.9rem,4vw,2.9rem); letter-spacing:-.02em; color:var(--forest); line-height:1.08; }
+  .lead{ margin-top:1.1rem; color:var(--muted); font-size:1.05rem; }
+
+  /* ABOUT */
+  .about-grid{ display:grid; grid-template-columns:1.4fr .8fr; gap:60px; }
+  .about-body p{ color:#33403a; margin-bottom:1.2rem; font-size:1.04rem; }
+  .about-body p:last-child{ margin-bottom:0; }
+  .about-aside{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:30px; align-self:start; }
+  .about-aside h3{ font-family:var(--display); color:var(--forest); font-size:1.15rem; margin-bottom:1rem; }
+  .edu-item{ padding:.95rem 0; border-top:1px solid var(--line); }
+  .edu-item:first-of-type{ border-top:0; padding-top:0; }
+  .edu-item .yr{ font-size:.76rem; color:var(--accent-deep); font-weight:700; letter-spacing:.05em; }
+  .edu-item .deg{ font-weight:600; color:var(--ink); margin-top:.15rem; }
+  .edu-item .where{ font-size:.88rem; color:var(--muted); }
+
+  /* RESEARCH CARDS */
+  .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+  .card{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:34px 30px; transition:transform .3s, box-shadow .3s, border-color .3s; position:relative; overflow:hidden; }
+  .card::before{ content:""; position:absolute; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent-deep)); transform:scaleX(0); transform-origin:left; transition:transform .35s; }
+  .card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:transparent; }
+  .card:hover::before{ transform:scaleX(1); }
+  .card .ic{ width:46px; height:46px; border-radius:12px; background:rgba(23,163,152,.14); display:flex; align-items:center; justify-content:center; margin-bottom:1.1rem; font-size:1.3rem; }
+  .card h3{ font-family:var(--display); font-size:1.28rem; color:var(--forest); margin-bottom:.6rem; }
+  .card p{ color:var(--muted); font-size:.95rem; }
+  .tools{ margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; }
+  .tools span{ font-size:.74rem; background:var(--bg); border:1px solid var(--line); padding:.3rem .65rem; border-radius:100px; color:var(--forest-soft); font-weight:500; }
+
+  /* TIMELINE */
+  .timeline{ position:relative; margin-left:8px; }
+  .timeline::before{ content:""; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--accent),var(--line)); }
+  .tl-item{ position:relative; padding:0 0 38px 42px; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item::before{ content:""; position:absolute; left:0; top:5px; width:16px; height:16px; border-radius:50%; background:#fff; border:3px solid var(--accent); }
+  .tl-yr{ font-size:.78rem; font-weight:700; color:var(--accent-deep); letter-spacing:.05em; }
+  .tl-role{ font-family:var(--display); font-size:1.22rem; color:var(--forest); font-weight:600; margin-top:.1rem; }
+  .tl-org{ font-size:.92rem; color:var(--ink); font-weight:500; }
+  .tl-desc{ color:var(--muted); font-size:.94rem; margin-top:.45rem; }
+
+  /* PUBLICATIONS */
+  .pub-cols{ display:grid; grid-template-columns:1fr 1fr; gap:54px; }
+  .pub-list{ list-style:none; }
+  .pub-list li{ padding:18px 0; border-top:1px solid var(--line); font-size:.96rem; color:#33403a; }
+  .pub-list li:first-child{ border-top:0; padding-top:0; }
+  .pub-list .venue{ color:var(--forest-soft); font-style:italic; }
+  .pub-list .yr{ color:var(--muted); }
+  .badge{ display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:.18rem .5rem; border-radius:6px; margin-left:.4rem; vertical-align:middle; }
+  .b-accepted{ background:rgba(19,54,38,.12); color:var(--forest); }
+  .b-review{ background:rgba(23,163,152,.2); color:var(--accent-deep); }
+  .b-submitted{ background:#eee; color:#666; }
+  .pub-foot{ margin-top:26px; }
+
+  /* TEACHING */
+  .teach-intro{ display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:40px; }
+  .courses-taught{ list-style:none; }
+  .courses-taught li{ padding:.55rem 0 .55rem 1.6rem; position:relative; color:#33403a; font-size:.98rem; }
+  .courses-taught li::before{ content:"▸"; position:absolute; left:0; color:var(--accent-deep); }
+  .notice{ background:#fff; border:1px dashed var(--accent); border-radius:16px; padding:22px 24px; }
+  .notice h4{ font-family:var(--display); color:var(--forest); margin-bottom:.4rem; font-size:1.05rem; }
+  .notice p{ font-size:.92rem; color:var(--muted); }
+
+  .mat-table{ width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  .mat-table th{ background:var(--forest); color:#fff; text-align:left; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; padding:14px 18px; font-weight:600; }
+  .mat-table td{ padding:15px 18px; border-top:1px solid var(--line); font-size:.93rem; vertical-align:top; }
+  .mat-table tr:hover td{ background:#F2F8F5; }
+  .tag-type{ font-size:.72rem; background:var(--bg); border:1px solid var(--line); padding:.2rem .55rem; border-radius:100px; color:var(--forest-soft); font-weight:600; white-space:nowrap; }
+  .dl{ color:var(--accent-deep); font-weight:600; white-space:nowrap; }
+  .dl:hover{ text-decoration:underline; }
+
+  /* CONTACT */
+  .contact{ background:var(--forest); color:#fff; }
+  .contact .block{ padding:90px 0; }
+  .contact h2{ color:#fff; }
+  .contact .lead{ color:rgba(255,255,255,.72); }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; margin-top:46px; }
+  .c-item{ padding:16px 0; border-top:1px solid rgba(255,255,255,.14); }
+  .c-item:first-child{ border-top:0; padding-top:0; }
+  .c-item .k{ font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--accent); }
+  .c-item .v{ font-size:1.02rem; margin-top:.2rem; }
+  .c-item .v a:hover{ color:var(--accent); }
+  .profiles{ display:flex; gap:.8rem; flex-wrap:wrap; margin-top:8px; }
+  .profiles a{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); padding:.6rem 1rem; border-radius:100px; font-size:.85rem; font-weight:500; transition:.2s; }
+  .profiles a:hover{ background:var(--accent); color:var(--forest-deep); border-color:var(--accent); }
+  .ref-card{ background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.13); border-radius:14px; padding:18px 20px; margin-bottom:14px; }
+  .ref-card .nm{ font-weight:600; }
+  .ref-card .meta{ font-size:.85rem; color:rgba(255,255,255,.62); }
+
+  footer{ background:var(--forest-deep); color:rgba(255,255,255,.55); text-align:center; padding:34px 24px; font-size:.84rem; }
+  footer a{ color:var(--accent); }
+
+  /* reveal animation */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------------- RESPONSIVE ---------------- */
+  @media (max-width:880px){
+    nav ul{
+      position:fixed; inset:72px 0 auto 0; background:var(--bg); flex-direction:column;
+      gap:0; padding:10px 0; border-bottom:1px solid var(--line);
+      transform:translateY(-130%); transition:transform .35s; box-shadow:var(--shadow);
+    }
+    nav ul.open{ transform:translateY(0); }
+    nav li{ width:100%; text-align:center; }
+    nav a{ display:block; padding:.9rem; }
+    .burger{ display:flex; }
+    .hero-grid{ grid-template-columns:1fr; gap:40px; }
+    .portrait{ max-width:320px; margin:0 auto; order:-1; }
+    .stats .wrap{ grid-template-columns:repeat(2,1fr); gap:30px 18px; }
+    .about-grid, .cards, .pub-cols, .teach-intro, .contact-grid{ grid-template-columns:1fr; gap:30px; }
+    .block{ padding:66px 0; }
+    .mat-table{ font-size:.85rem; }
+    .mat-table th:nth-child(2), .mat-table td:nth-child(2){ display:none; }
+  }
+
+/* ============ STUDENTS PAGE ============ */
+.term-banner{ display:inline-flex; align-items:center; gap:.6rem; background:rgba(23,163,152,.16); border:1px solid var(--accent); color:var(--accent-deep); padding:.45rem .95rem; border-radius:100px; font-size:.82rem; font-weight:600; margin-bottom:1.4rem; }
+.announce-list{ display:flex; flex-direction:column; gap:16px; }
+.announce{ background:#fff; border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:14px; padding:20px 24px; transition:transform .25s, box-shadow .25s; }
+.announce:hover{ transform:translateX(4px); box-shadow:var(--shadow); }
+.announce .date{ font-size:.74rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent-deep); }
+.announce h4{ font-family:var(--display); color:var(--forest); font-size:1.12rem; margin:.25rem 0 .4rem; }
+.announce p{ color:var(--muted); font-size:.94rem; }
+
+.course-block{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:30px; margin-bottom:24px; transition:box-shadow .3s; }
+.course-block:hover{ box-shadow:var(--shadow); }
+.course-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:18px; }
+.course-head h3{ font-family:var(--display); color:var(--forest); font-size:1.42rem; }
+.course-head .meta{ color:var(--muted); font-size:.9rem; margin-top:.25rem; }
+.course-level{ background:var(--bg); border:1px solid var(--line); color:var(--forest-soft); font-size:.74rem; font-weight:600; padding:.35rem .8rem; border-radius:100px; white-space:nowrap; }
+.file-row{ display:flex; align-items:center; gap:14px; padding:12px 0; border-top:1px solid var(--line); }
+.file-row:first-of-type{ border-top:0; }
+.file-ic{ width:38px; height:38px; flex:none; border-radius:10px; background:rgba(23,163,152,.14); display:flex; align-items:center; justify-content:center; font-size:1.05rem; }
+.file-info{ flex:1; min-width:0; }
+.file-info .ttl{ font-weight:600; color:var(--ink); font-size:.96rem; }
+.file-info .sub{ font-size:.8rem; color:var(--muted); }
+.file-dl{ color:var(--accent-deep); font-weight:600; font-size:.86rem; white-space:nowrap; border:1px solid var(--line); padding:.45rem .9rem; border-radius:100px; transition:.2s; }
+.file-dl:hover{ background:var(--accent); color:var(--forest-deep); border-color:var(--accent); }
+
+.help-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.help-card{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px; }
+.help-card .ic{ font-size:1.5rem; margin-bottom:.6rem; }
+.help-card h4{ font-family:var(--display); color:var(--forest); font-size:1.1rem; margin-bottom:.4rem; }
+.help-card p{ color:var(--muted); font-size:.9rem; }
+.help-card a{ color:var(--accent-deep); font-weight:600; }
+@media (max-width:880px){ .help-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ======================= NAV ======================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="brand"><span class="dot"></span> Masoud&nbsp;Dehghani-Soufi</a>
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="#top" class="active">For Students</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="assets/CV_Masoud_Dehghani-Soufi.pdf" class="nav-cta" target="_blank">Download CV</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="top" style="padding-bottom:50px">
+  <div class="wrap">
+    <div class="reveal" style="max-width:60ch">
+      <span class="term-banner">● Current term — Spring 2026</span>
+      <span class="eyebrow">For Students</span>
+      <h1>Welcome to <em>class.</em></h1>
+      <p class="hero-sub" style="max-width:54ch">Everything you need for my courses — syllabi, lecture slides, datasets, assignments and announcements — kept in one place and updated through the term.</p>
+      <div class="hero-actions">
+        <a href="#announcements" class="btn btn-primary">📢 Announcements</a>
+        <a href="#courses" class="btn btn-ghost">Jump to courses</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= ANNOUNCEMENTS ======================= -->
+<section class="block" id="announcements" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Announcements</span>
+      <h2>Latest updates.</h2>
+    </div>
+
+    <!-- ANNOUNCEMENT (newest first — copy a block to add one) -->
+    <div class="announce-list">
+      <div class="announce reveal">
+        <span class="date">10 Feb 2026</span>
+        <h4>Week 1 slides posted</h4>
+        <p>Lecture 1 slides for Bioenergy Production &amp; Application are now available below. Please read the syllabus before our first session and install HOMER Pro on your laptop.</p>
+      </div>
+      <div class="announce reveal">
+        <span class="date">05 Feb 2026</span>
+        <h4>Office hours confirmed</h4>
+        <p>Weekly office hours are Mondays 13:00–15:00. No appointment needed — drop by, or email me to arrange another time.</p>
+      </div>
+      <div class="announce reveal">
+        <span class="date">01 Feb 2026</span>
+        <h4>Term begins</h4>
+        <p>Welcome to the new term. Registered students will find all course materials on this page. Check back regularly for updates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= COURSES ======================= -->
+<section class="block" id="courses" style="background:linear-gradient(180deg,#fff,var(--bg))">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Courses</span>
+      <h2>Materials by course.</h2>
+      <p class="lead">Click any item to download. Files open in a new tab.</p>
+    </div>
+
+    <!-- COURSE (copy this whole <article> to add a course) -->
+    <article class="course-block reveal">
+      <div class="course-head">
+        <div>
+          <h3>Bioenergy Production &amp; Application</h3>
+          <div class="meta">Core module · production pathways, conversion routes and applications of biomass energy.</div>
+        </div>
+        <span class="course-level">Postgraduate</span>
+      </div>
+
+      <!-- FILE (copy a .file-row to add a file; put the file in materials/) -->
+      <div class="file-row">
+        <div class="file-ic">📄</div>
+        <div class="file-info"><div class="ttl">Course syllabus &amp; grading scheme</div><div class="sub">PDF · updated Feb 2026</div></div>
+        <a class="file-dl" href="materials/syllabus-bioenergy.pdf" target="_blank">↓ Download</a>
+      </div>
+      <div class="file-row">
+        <div class="file-ic">📊</div>
+        <div class="file-info"><div class="ttl">Lecture 1 — Introduction to bioenergy</div><div class="sub">Slides · PDF</div></div>
+        <a class="file-dl" href="materials/lecture-01.pdf" target="_blank">↓ Download</a>
+      </div>
+      <div class="file-row">
+        <div class="file-ic">📝</div>
+        <div class="file-info"><div class="ttl">Reading list — Week 1</div><div class="sub">PDF</div></div>
+        <a class="file-dl" href="materials/reading-week1.pdf" target="_blank">↓ Download</a>
+      </div>
+    </article>
+
+    <article class="course-block reveal">
+      <div class="course-head">
+        <div>
+          <h3>Advanced Mathematical Modelling</h3>
+          <div class="meta">Modelling and optimisation of energy systems, including HOMER Pro and statistical design.</div>
+        </div>
+        <span class="course-level">Postgraduate</span>
+      </div>
+      <div class="file-row">
+        <div class="file-ic">📄</div>
+        <div class="file-info"><div class="ttl">Course outline</div><div class="sub">PDF</div></div>
+        <a class="file-dl" href="materials/outline-modelling.pdf" target="_blank">↓ Download</a>
+      </div>
+      <div class="file-row">
+        <div class="file-ic">🗂️</div>
+        <div class="file-info"><div class="ttl">HOMER Pro tutorial dataset</div><div class="sub">ZIP · sample data for the lab session</div></div>
+        <a class="file-dl" href="materials/homer-dataset.zip" target="_blank">↓ Download</a>
+      </div>
+    </article>
+
+    <article class="course-block reveal">
+      <div class="course-head">
+        <div>
+          <h3>Design of Experiments</h3>
+          <div class="meta">RSM, Box–Behnken and multi-objective optimisation for engineering research.</div>
+        </div>
+        <span class="course-level">Postgraduate</span>
+      </div>
+      <div class="file-row">
+        <div class="file-ic">📝</div>
+        <div class="file-info"><div class="ttl">Assignment 1</div><div class="sub">PDF · due in week 4</div></div>
+        <a class="file-dl" href="materials/assignment-01.pdf" target="_blank">↓ Download</a>
+      </div>
+    </article>
+
+    <p style="font-size:.82rem;color:var(--muted);margin-top:6px">The files above are examples. Add your real files to the <code>materials/</code> folder and update the links — see the comments in the page source.</p>
+  </div>
+</section>
+
+<!-- ======================= HELP / RESOURCES ======================= -->
+<section class="block" id="help">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Need Help?</span>
+      <h2>Reaching me &amp; the essentials.</h2>
+    </div>
+    <div class="help-grid">
+      <div class="help-card reveal">
+        <div class="ic">🕐</div>
+        <h4>Office hours</h4>
+        <p>Mondays, 13:00–15:00. Drop by or email to arrange another time.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="ic">✉️</div>
+        <h4>Get in touch</h4>
+        <p>Email me at <a href="mailto:m.dehghanisoufi@squ.edu.om">m.dehghanisoufi@squ.edu.om</a>. Please use your university address.</p>
+      </div>
+      <div class="help-card reveal">
+        <div class="ic">📐</div>
+        <h4>Submitting work</h4>
+        <p>Submit assignments as a single PDF, named <em>Surname_Assignment.pdf</em>, by the stated deadline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="yr"></span> Masoud Dehghani-Soufi · <a href="index.html">Back to home</a>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  burger.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, { threshold:.12 });
+  document.querySelectorAll('.reveal').forEach((el,i) => { el.style.transitionDelay = (i % 4 * 0.06) + 's'; io.observe(el); });
+</script>
+</body>
+</html>

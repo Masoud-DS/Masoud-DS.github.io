@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Masoud Dehghani-Soufi, Ph.D. — Low-carbon Fuels · TEA & LCA · Process Design</title>
+<meta name="description" content="Academic homepage of Dr. Masoud Dehghani-Soufi — green hydrogen, techno-economic and life-cycle assessment, hybrid renewable energy systems, and process design." />
+
+<!-- ============================================================
+     HOW TO EDIT THIS SITE (quick guide)
+     - All content lives in this single file. Search for the
+       section comments in CAPITALS (e.g. <!-- PUBLICATIONS -->) 
+     - To add a publication / course / experience entry, copy an
+       existing block (between its comment markers) and edit the text.
+     - To change colours or fonts, edit the :root variables in <style>
+.
+     - Replace assets/CV_Masoud_Dehghani-Soufi.pdf with a newer CV
+       (keep the same filename) to update the download button.
+     - Drop a real photo at assets/profile.jpg and uncomment the
+       <img> line in the HERO section.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Spline+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    /* ---- Colour palette: deep forest green + teal (sustainability) ---- */
+    --forest:        #133626;
+    --forest-deep:   #0C2419;
+    --forest-soft:   #1E4A37;
+    --accent:         #17A398;
+    --accent-deep:    #0E7C72;
+    --bg:         #EDF4F0;
+    --paper:         #FFFFFF;
+    --ink:           #16201B;
+    --muted:         #5C6A61;
+    --line:          #D6E3DC;
+    --shadow:        0 24px 60px -28px rgba(12,36,25,.45);
+
+    --display: "Fraunces", Georgia, serif;
+    --body:    "Spline Sans", -apple-system, sans-serif;
+    --maxw: 1120px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; scroll-padding-top:84px; }
+  body{
+    font-family:var(--body);
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+  section{ position:relative; }
+
+  /* grain / paper texture overlay */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:9999; pointer-events:none;
+    opacity:.035; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------------- NAV ---------------- */
+  header.nav{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    backdrop-filter:saturate(140%) blur(10px);
+    background:rgba(237,244,240,.82);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s, box-shadow .3s, background .3s;
+  }
+  header.nav.scrolled{ border-color:var(--line); box-shadow:0 6px 24px -18px rgba(12,36,25,.5); }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:72px; }
+  .brand{ font-family:var(--display); font-weight:600; font-size:1.18rem; letter-spacing:-.01em; display:flex; align-items:center; gap:.55rem; }
+  .brand .dot{ width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(23,163,152,.25); }
+  nav ul{ list-style:none; display:flex; gap:1.9rem; align-items:center; }
+  nav a{ font-size:.86rem; font-weight:500; color:var(--muted); position:relative; padding:.2rem 0; transition:color .2s; }
+  nav a::after{ content:""; position:absolute; left:0; bottom:-3px; height:2px; width:0; background:var(--accent); transition:width .25s; }
+  nav a:hover, nav a.active{ color:var(--forest); }
+  nav a:hover::after, nav a.active::after{ width:100%; }
+  .nav-cta{ background:var(--forest); color:#fff !important; padding:.6rem 1.05rem; border-radius:100px; font-size:.82rem; font-weight:600; transition:transform .2s, background .2s; }
+  .nav-cta:hover{ background:var(--forest-soft); transform:translateY(-1px); }
+  .nav-cta::after{ display:none; }
+  .burger{ display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:0; padding:6px; }
+  .burger span{ width:24px; height:2px; background:var(--forest); transition:.3s; }
+
+  /* ---------------- HERO ---------------- */
+  .hero{ padding:140px 0 70px; background:
+      radial-gradient(1100px 520px at 85% -10%, rgba(23,163,152,.14), transparent 60%),
+      radial-gradient(900px 500px at -5% 10%, rgba(19,54,38,.07), transparent 55%);
+    overflow:hidden;
+  }
+  .hero-grid{ display:grid; grid-template-columns:1.55fr .85fr; gap:56px; align-items:center; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:.5rem; font-size:.74rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-deep); margin-bottom:1.4rem; }
+  .eyebrow::before{ content:""; width:30px; height:1px; background:var(--accent-deep); }
+  h1{ font-family:var(--display); font-weight:600; font-size:clamp(2.5rem,6vw,4.3rem); line-height:1.02; letter-spacing:-.02em; color:var(--forest); }
+  h1 em{ font-style:italic; color:var(--accent-deep); }
+  .hero-sub{ margin-top:1.3rem; font-size:clamp(1.02rem,1.6vw,1.22rem); color:var(--muted); max-width:46ch; }
+  .hero-role{ margin-top:1.6rem; font-size:.95rem; color:var(--forest-soft); font-weight:500; display:flex; align-items:center; gap:.6rem; flex-wrap:wrap; }
+  .pin{ display:inline-flex; align-items:center; gap:.4rem; background:#fff; border:1px solid var(--line); padding:.35rem .8rem; border-radius:100px; font-size:.82rem; }
+  .hero-actions{ margin-top:2.2rem; display:flex; gap:.8rem; flex-wrap:wrap; }
+  .btn{ display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1.3rem; border-radius:100px; font-weight:600; font-size:.9rem; transition:transform .2s, box-shadow .2s, background .2s; cursor:pointer; border:0; }
+  .btn-primary{ background:var(--forest); color:#fff; box-shadow:0 14px 30px -14px rgba(19,54,38,.7); }
+  .btn-primary:hover{ transform:translateY(-2px); background:var(--forest-soft); }
+  .btn-ghost{ background:#fff; color:var(--forest); border:1px solid var(--line); }
+  .btn-ghost:hover{ transform:translateY(-2px); border-color:var(--accent); }
+
+  .portrait{ position:relative; }
+  .portrait-frame{
+    aspect-ratio:4/5; border-radius:22px; overflow:hidden; position:relative;
+    background:linear-gradient(150deg,var(--forest),var(--forest-deep));
+    box-shadow:var(--shadow);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .portrait-frame img{ width:100%; height:100%; object-fit:cover; }
+  .portrait-initials{ font-family:var(--display); font-size:5rem; color:rgba(255,255,255,.25); font-weight:600; }
+  .portrait-frame::after{ content:""; position:absolute; inset:0; background:radial-gradient(circle at 70% 20%, rgba(23,163,152,.28), transparent 55%); }
+  .portrait-badge{
+    position:absolute; bottom:-18px; left:-18px; background:var(--accent); color:var(--forest-deep);
+    font-family:var(--display); font-weight:600; padding:.9rem 1.1rem; border-radius:16px; line-height:1; box-shadow:var(--shadow);
+  }
+  .portrait-badge b{ font-size:1.5rem; display:block; }
+  .portrait-badge span{ font-size:.68rem; font-weight:500; text-transform:uppercase; letter-spacing:.08em; font-family:var(--body); }
+
+  /* ---------------- STATS STRIP ---------------- */
+  .stats{ background:var(--forest); color:#fff; }
+  .stats .wrap{ display:grid; grid-template-columns:repeat(5,1fr); gap:18px; padding:48px 24px; }
+  .stat b{ font-family:var(--display); font-size:clamp(1.8rem,3vw,2.6rem); font-weight:600; color:var(--accent); display:block; line-height:1; }
+  .stat span{ font-size:.78rem; letter-spacing:.05em; color:rgba(255,255,255,.7); margin-top:.5rem; display:block; text-transform:uppercase; }
+
+  /* ---------------- GENERIC SECTION ---------------- */
+  .block{ padding:96px 0; }
+  .sec-head{ margin-bottom:52px; max-width:62ch; }
+  .sec-tag{ font-size:.74rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent-deep); display:flex; align-items:center; gap:.6rem; margin-bottom:1rem; }
+  .sec-tag::before{ content:""; width:26px; height:1px; background:var(--accent-deep); }
+  h2{ font-family:var(--display); font-weight:600; font-size:clamp(1.9rem,4vw,2.9rem); letter-spacing:-.02em; color:var(--forest); line-height:1.08; }
+  .lead{ margin-top:1.1rem; color:var(--muted); font-size:1.05rem; }
+
+  /* ABOUT */
+  .about-grid{ display:grid; grid-template-columns:1.4fr .8fr; gap:60px; }
+  .about-body p{ color:#33403a; margin-bottom:1.2rem; font-size:1.04rem; }
+  .about-body p:last-child{ margin-bottom:0; }
+  .about-aside{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:30px; align-self:start; }
+  .about-aside h3{ font-family:var(--display); color:var(--forest); font-size:1.15rem; margin-bottom:1rem; }
+  .edu-item{ padding:.95rem 0; border-top:1px solid var(--line); }
+  .edu-item:first-of-type{ border-top:0; padding-top:0; }
+  .edu-item .yr{ font-size:.76rem; color:var(--accent-deep); font-weight:700; letter-spacing:.05em; }
+  .edu-item .deg{ font-weight:600; color:var(--ink); margin-top:.15rem; }
+  .edu-item .where{ font-size:.88rem; color:var(--muted); }
+
+  /* RESEARCH CARDS */
+  .cards{ display:grid; grid-template-columns:repeat(2,1fr); gap:22px; }
+  .card{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:34px 30px; transition:transform .3s, box-shadow .3s, border-color .3s; position:relative; overflow:hidden; }
+  .card::before{ content:""; position:absolute; top:0; left:0; width:100%; height:3px; background:linear-gradient(90deg,var(--accent),var(--accent-deep)); transform:scaleX(0); transform-origin:left; transition:transform .35s; }
+  .card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:transparent; }
+  .card:hover::before{ transform:scaleX(1); }
+  .card .ic{ width:46px; height:46px; border-radius:12px; background:rgba(23,163,152,.14); display:flex; align-items:center; justify-content:center; margin-bottom:1.1rem; font-size:1.3rem; }
+  .card h3{ font-family:var(--display); font-size:1.28rem; color:var(--forest); margin-bottom:.6rem; }
+  .card p{ color:var(--muted); font-size:.95rem; }
+  .tools{ margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; }
+  .tools span{ font-size:.74rem; background:var(--bg); border:1px solid var(--line); padding:.3rem .65rem; border-radius:100px; color:var(--forest-soft); font-weight:500; }
+
+  /* TIMELINE */
+  .timeline{ position:relative; margin-left:8px; }
+  .timeline::before{ content:""; position:absolute; left:7px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--accent),var(--line)); }
+  .tl-item{ position:relative; padding:0 0 38px 42px; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item::before{ content:""; position:absolute; left:0; top:5px; width:16px; height:16px; border-radius:50%; background:#fff; border:3px solid var(--accent); }
+  .tl-yr{ font-size:.78rem; font-weight:700; color:var(--accent-deep); letter-spacing:.05em; }
+  .tl-role{ font-family:var(--display); font-size:1.22rem; color:var(--forest); font-weight:600; margin-top:.1rem; }
+  .tl-org{ font-size:.92rem; color:var(--ink); font-weight:500; }
+  .tl-desc{ color:var(--muted); font-size:.94rem; margin-top:.45rem; }
+
+  /* PUBLICATIONS */
+  .pub-cols{ display:grid; grid-template-columns:1fr 1fr; gap:54px; }
+  .pub-list{ list-style:none; }
+  .pub-list li{ padding:18px 0; border-top:1px solid var(--line); font-size:.96rem; color:#33403a; }
+  .pub-list li:first-child{ border-top:0; padding-top:0; }
+  .pub-list .venue{ color:var(--forest-soft); font-style:italic; }
+  .pub-list .yr{ color:var(--muted); }
+  .badge{ display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:.18rem .5rem; border-radius:6px; margin-left:.4rem; vertical-align:middle; }
+  .b-accepted{ background:rgba(19,54,38,.12); color:var(--forest); }
+  .b-review{ background:rgba(23,163,152,.2); color:var(--accent-deep); }
+  .b-submitted{ background:#eee; color:#666; }
+  .pub-foot{ margin-top:26px; }
+
+  /* TEACHING */
+  .teach-intro{ display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:40px; }
+  .courses-taught{ list-style:none; }
+  .courses-taught li{ padding:.55rem 0 .55rem 1.6rem; position:relative; color:#33403a; font-size:.98rem; }
+  .courses-taught li::before{ content:"▸"; position:absolute; left:0; color:var(--accent-deep); }
+  .notice{ background:#fff; border:1px dashed var(--accent); border-radius:16px; padding:22px 24px; }
+  .notice h4{ font-family:var(--display); color:var(--forest); margin-bottom:.4rem; font-size:1.05rem; }
+  .notice p{ font-size:.92rem; color:var(--muted); }
+
+  .mat-table{ width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; }
+  .mat-table th{ background:var(--forest); color:#fff; text-align:left; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; padding:14px 18px; font-weight:600; }
+  .mat-table td{ padding:15px 18px; border-top:1px solid var(--line); font-size:.93rem; vertical-align:top; }
+  .mat-table tr:hover td{ background:#F2F8F5; }
+  .tag-type{ font-size:.72rem; background:var(--bg); border:1px solid var(--line); padding:.2rem .55rem; border-radius:100px; color:var(--forest-soft); font-weight:600; white-space:nowrap; }
+  .dl{ color:var(--accent-deep); font-weight:600; white-space:nowrap; }
+  .dl:hover{ text-decoration:underline; }
+
+  /* CONTACT */
+  .contact{ background:var(--forest); color:#fff; }
+  .contact .block{ padding:90px 0; }
+  .contact h2{ color:#fff; }
+  .contact .lead{ color:rgba(255,255,255,.72); }
+  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:50px; margin-top:46px; }
+  .c-item{ padding:16px 0; border-top:1px solid rgba(255,255,255,.14); }
+  .c-item:first-child{ border-top:0; padding-top:0; }
+  .c-item .k{ font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--accent); }
+  .c-item .v{ font-size:1.02rem; margin-top:.2rem; }
+  .c-item .v a:hover{ color:var(--accent); }
+  .profiles{ display:flex; gap:.8rem; flex-wrap:wrap; margin-top:8px; }
+  .profiles a{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); padding:.6rem 1rem; border-radius:100px; font-size:.85rem; font-weight:500; transition:.2s; }
+  .profiles a:hover{ background:var(--accent); color:var(--forest-deep); border-color:var(--accent); }
+  .ref-card{ background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.13); border-radius:14px; padding:18px 20px; margin-bottom:14px; }
+  .ref-card .nm{ font-weight:600; }
+  .ref-card .meta{ font-size:.85rem; color:rgba(255,255,255,.62); }
+
+  footer{ background:var(--forest-deep); color:rgba(255,255,255,.55); text-align:center; padding:34px 24px; font-size:.84rem; }
+  footer a{ color:var(--accent); }
+
+  /* reveal animation */
+  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------------- RESPONSIVE ---------------- */
+  @media (max-width:880px){
+    nav ul{
+      position:fixed; inset:72px 0 auto 0; background:var(--bg); flex-direction:column;
+      gap:0; padding:10px 0; border-bottom:1px solid var(--line);
+      transform:translateY(-130%); transition:transform .35s; box-shadow:var(--shadow);
+    }
+    nav ul.open{ transform:translateY(0); }
+    nav li{ width:100%; text-align:center; }
+    nav a{ display:block; padding:.9rem; }
+    .burger{ display:flex; }
+    .hero-grid{ grid-template-columns:1fr; gap:40px; }
+    .portrait{ max-width:320px; margin:0 auto; order:-1; }
+    .stats .wrap{ grid-template-columns:repeat(2,1fr); gap:30px 18px; }
+    .about-grid, .cards, .pub-cols, .teach-intro, .contact-grid{ grid-template-columns:1fr; gap:30px; }
+    .block{ padding:66px 0; }
+    .mat-table{ font-size:.85rem; }
+    .mat-table th:nth-child(2), .mat-table td:nth-child(2){ display:none; }
+  }
+
+/* ============ STUDENTS PAGE ============ */
+.term-banner{ display:inline-flex; align-items:center; gap:.6rem; background:rgba(23,163,152,.16); border:1px solid var(--accent); color:var(--accent-deep); padding:.45rem .95rem; border-radius:100px; font-size:.82rem; font-weight:600; margin-bottom:1.4rem; }
+.announce-list{ display:flex; flex-direction:column; gap:16px; }
+.announce{ background:#fff; border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:14px; padding:20px 24px; transition:transform .25s, box-shadow .25s; }
+.announce:hover{ transform:translateX(4px); box-shadow:var(--shadow); }
+.announce .date{ font-size:.74rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent-deep); }
+.announce h4{ font-family:var(--display); color:var(--forest); font-size:1.12rem; margin:.25rem 0 .4rem; }
+.announce p{ color:var(--muted); font-size:.94rem; }
+
+.course-block{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:30px; margin-bottom:24px; transition:box-shadow .3s; }
+.course-block:hover{ box-shadow:var(--shadow); }
+.course-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:18px; }
+.course-head h3{ font-family:var(--display); color:var(--forest); font-size:1.42rem; }
+.course-head .meta{ color:var(--muted); font-size:.9rem; margin-top:.25rem; }
+.course-level{ background:var(--bg); border:1px solid var(--line); color:var(--forest-soft); font-size:.74rem; font-weight:600; padding:.35rem .8rem; border-radius:100px; white-space:nowrap; }
+.file-row{ display:flex; align-items:center; gap:14px; padding:12px 0; border-top:1px solid var(--line); }
+.file-row:first-of-type{ border-top:0; }
+.file-ic{ width:38px; height:38px; flex:none; border-radius:10px; background:rgba(23,163,152,.14); display:flex; align-items:center; justify-content:center; font-size:1.05rem; }
+.file-info{ flex:1; min-width:0; }
+.file-info .ttl{ font-weight:600; color:var(--ink); font-size:.96rem; }
+.file-info .sub{ font-size:.8rem; color:var(--muted); }
+.file-dl{ color:var(--accent-deep); font-weight:600; font-size:.86rem; white-space:nowrap; border:1px solid var(--line); padding:.45rem .9rem; border-radius:100px; transition:.2s; }
+.file-dl:hover{ background:var(--accent); color:var(--forest-deep); border-color:var(--accent); }
+
+.help-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.help-card{ background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px; }
+.help-card .ic{ font-size:1.5rem; margin-bottom:.6rem; }
+.help-card h4{ font-family:var(--display); color:var(--forest); font-size:1.1rem; margin-bottom:.4rem; }
+.help-card p{ color:var(--muted); font-size:.9rem; }
+.help-card a{ color:var(--accent-deep); font-weight:600; }
+@media (max-width:880px){ .help-grid{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<!-- ======================= NAV ======================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand"><span class="dot"></span> Masoud&nbsp;Dehghani-Soufi</a>
+    <nav>
+      <ul id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="assets/CV_Masoud_Dehghani-Soufi.pdf" class="nav-cta" target="_blank">Download CV</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text reveal">
+      <span class="eyebrow">Process &amp; Sustainable Energy Engineer</span>
+      <h1>Engineering the<br><em>economics</em> of clean energy.</h1>
+      <p class="hero-sub">Working at the interface of low-carbon fuels, green hydrogen, and the techno-economic &amp; life-cycle modelling that turns them into deployable systems.</p>
+      <div class="hero-role">
+        <span class="pin">📍 Muscat, Oman</span>
+        <span>Visiting Faculty · Sustainable Energy Research Center · Sultan Qaboos University</span>
+      </div>
+      <div class="hero-actions">
+        <a href="assets/CV_Masoud_Dehghani-Soufi.pdf" class="btn btn-primary" target="_blank">↓ Download full CV</a>
+        <a href="#research" class="btn btn-ghost">Explore research</a>
+      </div>
+    </div>
+    <div class="portrait reveal">
+      <div class="portrait-frame">
+        <!-- To use your photo: drop a file at assets/profile.jpg and replace the line below with:
+             <img src="assets/profile.jpg" alt="Masoud Dehghani-Soufi" /> -->
+        <span class="portrait-initials">MD</span>
+      </div>
+      <div class="portrait-badge"><b>Ph.D.</b><span>Mech. Eng.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= STATS ======================= -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><b>18+</b><span>Peer-reviewed papers</span></div>
+    <div class="stat reveal"><b>7</b><span>Under review / accepted</span></div>
+    <div class="stat reveal"><b>€95k</b><span>Industry-funded research</span></div>
+    <div class="stat reveal"><b>5</b><span>TEA-led projects</span></div>
+    <div class="stat reveal"><b>9+1</b><span>MSc &amp; PhD theses supervised</span></div>
+  </div>
+</section>
+
+<!-- ======================= ABOUT ======================= -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="sec-head" style="margin-bottom:30px">
+          <span class="sec-tag">About</span>
+          <h2>A decade at the meeting point of fuels, process design and economics.</h2>
+        </div>
+        <div class="about-body">
+          <p>I am a mechanical engineer (Ph.D., Tarbiat Modares University; research visit at INP Toulouse / CNRS) working on low-carbon fuels, techno-economic analysis, and process design. A decade of research at the Renewable Energies Research Institute and as Assistant Professor at the University of Tehran sits alongside five industry-funded projects worth roughly €95,000 — four of them led by techno-economic analysis.</p>
+          <p>Since 2025 I have been a Visiting Faculty member at Sultan Qaboos University in Muscat, working on green-hydrogen pathways, hybrid solar–wind systems, and the techno-economic and life-cycle modelling that connects them to real deployment in the Gulf.</p>
+          <p>Most of my day-to-day work is quantitative: analysing fuel-production and fuel-utilisation pathways, building Excel- and HOMER-based decision tools, drafting LCA and TEA case studies, and writing the engineering side of scale-up — from chemistry through capex to operating envelope.</p>
+        </div>
+      </div>
+
+      <!-- EDUCATION (copy an .edu-item block to add a degree) -->
+      <aside class="about-aside reveal">
+        <h3>Education</h3>
+        <div class="edu-item">
+          <div class="yr">2013 — 2018</div>
+          <div class="deg">Ph.D., Mechanical Engineering</div>
+          <div class="where">Tarbiat Modares University, Tehran · Biosystems &amp; Renewable Energies</div>
+        </div>
+        <div class="edu-item">
+          <div class="yr">2011 — 2013</div>
+          <div class="deg">M.Sc., Mechanical Engineering</div>
+          <div class="where">Tarbiat Modares University, Tehran</div>
+        </div>
+        <div class="edu-item">
+          <div class="yr">2006 — 2010</div>
+          <div class="deg">B.Sc., Mechanical Engineering</div>
+          <div class="where">Urmia University, Iran</div>
+        </div>
+        <h3 style="margin-top:1.6rem">Languages</h3>
+        <div class="tools">
+          <span>English — C1 (IELTS 7.0)</span><span>Persian — Native</span>
+          <span>Azerbaijani — Native</span><span>German — A2</span><span>French — A1</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= RESEARCH ======================= -->
+<section class="block" id="research" style="background:linear-gradient(180deg,#fff,var(--bg))">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Research Focus</span>
+      <h2>Four threads, one question: what does the clean transition actually cost?</h2>
+      <p class="lead">Each area below is backed by published work, industry projects, or manuscripts currently in the pipeline.</p>
+    </div>
+
+    <!-- RESEARCH CARDS (copy a .card block to add an area) -->
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ic">💧</div>
+        <h3>Green Hydrogen Pathways</h3>
+        <p>Production, storage and recovery of hydrogen; techno-economic assessment of hydrogen energy storage under high-solar conditions, and downdraft gasification for hydrogen-bearing syngas.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">📊</div>
+        <h3>Techno-Economic Analysis</h3>
+        <p>Process-scale TEA from chemistry to capex: glycerin-route economics, bio-lubricant line scale-up, and comparative TEA of energy-storage technologies for hybrid systems.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">♻️</div>
+        <h3>Life-Cycle Assessment</h3>
+        <p>ISO-14040 LCA and carbon-footprint accounting, including comparative LCA of reactor configurations and bio-lubricant production from waste cooking oil.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">⚙️</div>
+        <h3>Hybrid Renewables &amp; Process Design</h3>
+        <p>HOMER Pro modelling of solar–wind systems, Aspen HYSYS process simulation, reactor CFD, and process intensification through oscillatory, microwave and ultrasound reactors.</p>
+        <div class="tools">
+          <span>HOMER Pro</span><span>Aspen HYSYS</span><span>ANSYS Fluent</span><span>HTRI</span><span>MATLAB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= EXPERIENCE ======================= -->
+<section class="block" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Experience</span>
+      <h2>Research, teaching &amp; lab leadership across three countries.</h2>
+    </div>
+
+    <!-- TIMELINE (copy a .tl-item block to add a role) -->
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-yr">2025 — Present</div>
+        <div class="tl-role">Visiting Faculty</div>
+        <div class="tl-org">Sultan Qaboos University, Muscat · Sustainable Energy Research Center</div>
+        <p class="tl-desc">Green-hydrogen pathways, hybrid solar–wind modelling in HOMER Pro, and the techno-economic and life-cycle side of arid-climate energy systems. Session Chair, IEEE ICSEDI ’26 — Track 6, Sustainable Design.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-yr">2019 — 2025</div>
+        <div class="tl-role">Assistant Professor</div>
+        <div class="tl-org">University of Tehran</div>
+        <p class="tl-desc">Founded and ran the BioSynergy Laboratory — low-carbon fuels and lubricants, process intensification and TEA. Postgraduate teaching in bioenergy, modelling and design of experiments. Supervised nine M.Sc. and one Ph.D. thesis to completion.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-yr">2018 — 2019</div>
+        <div class="tl-role">Postdoctoral Fellow</div>
+        <div class="tl-org">Center for Process Design &amp; Simulation, University of Tehran</div>
+        <p class="tl-desc">Aspen HYSYS process simulation and PFD / P&amp;ID development for industrial partners.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-yr">2017</div>
+        <div class="tl-role">Visiting Researcher</div>
+        <div class="tl-org">INP Toulouse / CNRS · Laboratoire de Génie Chimique</div>
+        <p class="tl-desc">CFD of oscillatory baffled reactors and multiphase mixing, hosted by Dr. Joëlle Aubin (ENSIACET).</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-yr">2019</div>
+        <div class="tl-role">Erasmus+ Invited Teaching Staff</div>
+        <div class="tl-org">Philipps-Universität Marburg, Germany</div>
+        <p class="tl-desc">Workshops on the prospects and challenges of bio-fuels and bio-lubricants, hosted by Prof. Armin Geyer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PUBLICATIONS ======================= -->
+<section class="block" id="publications" style="background:linear-gradient(180deg,var(--bg),#fff)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Publications</span>
+      <h2>Selected work &amp; current pipeline.</h2>
+      <p class="lead">Eighteen peer-reviewed papers in print; seven more under review or accepted. The full list lives on Google Scholar.</p>
+    </div>
+
+    <div class="pub-cols">
+      <!-- SELECTED PUBLISHED (copy an <li> to add) -->
+      <div class="reveal">
+        <h3 style="font-family:var(--display);color:var(--forest);font-size:1.3rem;margin-bottom:18px">Selected peer-reviewed</h3>
+        <ul class="pub-list">
+          <li>Sadeq A.M., Homod R.Z., …, Dehghani-Soufi M. Advancements in combustion technologies: a review. <span class="venue">Energy Conversion &amp; Management: X</span> 26, 100964 <span class="yr">(2025)</span></li>
+          <li>Shamardi A., Dehghani-Soufi M., et al. Bio-based multi-purpose lithium grease from vegetable oils. <span class="venue">Renewable Energy</span> 237, 121678 <span class="yr">(2024)</span></li>
+          <li>Almasi S., Ghobadian B., Dehghani-Soufi M., et al. MAC@CaO: a sustainable heterogeneous catalyst for bio-based fuels and lubricants. <span class="venue">Biomass &amp; Bioenergy</span> 182, 107071 <span class="yr">(2024)</span></li>
+          <li>Khanian-Najaf-Abadi M., Ghobadian B., Dehghani-Soufi M., Heydari A. Choline-hydroxide catalysis in an ultrasonic reactor. <span class="venue">Journal of Cleaner Production</span> 382, 134767 <span class="yr">(2023)</span></li>
+          <li>Rokni K., Mostafaei M., Dehghani-Soufi M., Kahrizi D. Microwave-assisted synthesis of a bio-lubricant from camelina oil. <span class="venue">Scientific Reports</span> 12, 11941 <span class="yr">(2022)</span></li>
+          <li>Ghorashi Oskouie A., Dehghani-Soufi M., et al. Greenhouse-effluent desalination using solar energy with HYSYS. <span class="venue">Results in Engineering</span> 27, 105892 <span class="yr">(2025)</span></li>
+        </ul>
+        <div class="pub-foot">
+          <a href="https://scholar.google.com/citations?user=BfnLm-EAAAAJ" class="btn btn-ghost" target="_blank">View all on Google Scholar →</a>
+        </div>
+      </div>
+
+      <!-- PIPELINE (copy an <li> to add; badge classes: b-accepted / b-review / b-submitted) -->
+      <div class="reveal">
+        <h3 style="font-family:var(--display);color:var(--forest);font-size:1.3rem;margin-bottom:18px">Under review &amp; accepted</h3>
+        <ul class="pub-list">
+          <li>Techno-economic assessment of hydrogen energy storage under high-solar conditions in Oman. <span class="venue">ICCED 2026</span> <span class="badge b-accepted">Accepted</span></li>
+          <li>Comparative TEA of energy-storage technologies for hybrid solar–wind systems &amp; green-hydrogen pathways in Oman. <span class="venue">Applied Energy</span> <span class="badge b-review">Under review</span></li>
+          <li>Multi-criteria decision-making framework for renewable participation in net-zero power systems. <span class="venue">Renewable Energy</span> <span class="badge b-review">In revision</span></li>
+          <li>Deployment barriers for seawater-greenhouse systems in arid coastal GCC regions. <span class="venue">Sustainable Energy Tech. &amp; Assessments</span> <span class="badge b-review">Under review</span></li>
+          <li>Design &amp; optimisation of a small-scale downdraft gasifier for hydrogen-bearing syngas. <span class="venue">Discover Sustainability</span> <span class="badge b-submitted">Submitted</span></li>
+          <li>Reactor-substitution effects in waste-cooking-oil bio-lubricant production: a comparative LCA. <span class="venue">Journal of Cleaner Production</span> <span class="badge b-submitted">Submitted</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= TEACHING (teaser → full student page) ======================= -->
+<section class="block" id="teaching">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Teaching &amp; Supervision</span>
+      <h2>Working with students, from first lecture to thesis defence.</h2>
+      <p class="lead">Postgraduate teaching in bioenergy, modelling and design of experiments, plus an invited LCA lectureship. Nine M.Sc. and one Ph.D. thesis supervised to completion.</p>
+    </div>
+
+    <div class="teach-intro">
+      <div class="reveal">
+        <h3 style="font-family:var(--display);color:var(--forest);font-size:1.2rem;margin-bottom:12px">Courses taught</h3>
+        <ul class="courses-taught">
+          <li>Bioenergy Production &amp; Application</li>
+          <li>Advanced Mathematical Modelling</li>
+          <li>Design of Experiments</li>
+          <li>Waste Management of Energy Industries</li>
+          <li>Life-Cycle Assessment (invited lectureship)</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="notice">
+          <h4>📚 Current students</h4>
+          <p>Lecture slides, syllabi, datasets and announcements for my courses live on a dedicated page — kept up to date through the term.</p>
+          <p style="margin-top:1.1rem"><a href="students.html" class="btn btn-primary">Course materials &amp; student resources →</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CONTACT ======================= -->
+<section class="contact" id="contact">
+  <div class="wrap block">
+    <div class="sec-head reveal" style="max-width:60ch">
+      <span class="sec-tag" style="color:var(--accent)">Contact</span>
+      <h2>Open to collaboration &amp; new roles.</h2>
+      <p class="lead">Get in touch about green-hydrogen, techno-economic studies, or research partnerships.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="c-item">
+          <div class="k">Email</div>
+          <div class="v"><a href="mailto:m.dehghanisoufi@squ.edu.om">m.dehghanisoufi@squ.edu.om</a></div>
+        </div>
+        <div class="c-item">
+          <div class="k">Phone / WhatsApp</div>
+          <div class="v"><a href="tel:+96891261764">+968 9126 1764</a></div>
+        </div>
+        <div class="c-item">
+          <div class="k">Based in</div>
+          <div class="v">Muscat, Oman · open to relocation</div>
+        </div>
+        <div class="c-item">
+          <div class="k">Profiles</div>
+          <!-- Replace the # links with your real ORCID and LinkedIn URLs -->
+          <div class="profiles">
+            <a href="https://scholar.google.com/citations?user=BfnLm-EAAAAJ" target="_blank">Google Scholar</a>
+            <a href="#" target="_blank">ORCID</a>
+            <a href="#" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- REFEREES (copy a .ref-card to add) -->
+      <div class="reveal">
+        <h3 style="font-family:var(--display);color:#fff;font-size:1.2rem;margin-bottom:16px">Referees</h3>
+        <div class="ref-card">
+          <div class="nm">Prof. Barat Ghobadian</div>
+          <div class="meta">Tarbiat Modares University · Ph.D. &amp; M.Sc. supervisor</div>
+        </div>
+        <div class="ref-card">
+          <div class="nm">Prof. Rahmat Sotudeh-Gharehbagh</div>
+          <div class="meta">University of Tehran · Postdoctoral supervisor</div>
+        </div>
+        <div class="ref-card">
+          <div class="nm">Dr. Joëlle Aubin</div>
+          <div class="meta">INP Toulouse / CNRS · Research-visit host</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="yr"></span> Masoud Dehghani-Soufi · Built with care · Hosted free on
+  <a href="https://pages.github.com" target="_blank">GitHub Pages</a>
+</footer>
+
+<script>
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // nav scrolled state
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
+
+  // mobile menu
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  burger.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, { threshold:.12 });
+  document.querySelectorAll('.reveal').forEach((el,i) => {
+    el.style.transitionDelay = (i % 4 * 0.06) + 's';
+    io.observe(el);
+  });
+
+  // active nav highlight
+  const sections = [...document.querySelectorAll('section[id]')];
+  const links = [...document.querySelectorAll('#menu a')];
+  addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (scrollY >= s.offsetTop - 120) cur = s.id; });
+    links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+  });
+</script>
+</body>
+</html>
